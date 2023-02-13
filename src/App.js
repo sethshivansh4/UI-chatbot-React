@@ -37,16 +37,35 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <form onSubmit={handleSubmit}>
-        <textarea
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-        ></textarea>
-        <button type="submit">Submit</button>
-      </form>
-      <div>{response} </div>
+    <div className="container">
+    <div className="row">
+        <div className="col-md-12">
+            <h1>Kairos Chat</h1>
+            <div className="well">
+                <div className="row">
+                    <div className="col-md-12">
+                        <div id="conversation">Here goes the conversation</div>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-md-12">
+                        <br/><textarea id="message" className="form-control" rows="3"
+                        onChange={(e) => setMessage(e.target.value)}></textarea>
+                    </div>
+                </div>
+                <div>
+                  </div>
+                <div className="row">
+                    <div className="col-md-12">
+                        <br/><button id="send" className="btn btn-primary" onClick={handleSubmit}>Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+    <div>{response} </div>
+</div>
+
   );
 }
 
